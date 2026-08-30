@@ -55,6 +55,16 @@ const shotPath = join(shotDir, 'sms.png');
 }
 
 const page = await browser.newPage({ viewport: { width: 1360, height: 1000 } });
+
+// Skip the first-run welcome screen, which otherwise covers the app and hides
+// the file input this test needs.
+await page.addInitScript(() => {
+  try {
+    localStorage.setItem('skeptic.welcomed.v1', 'yes');
+  } catch {
+    /* private mode; the overlay is dismissable anyway */
+  }
+});
 const offOrigin = [];
 page.on('request', (r) => {
   const url = r.url();
