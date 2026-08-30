@@ -9,13 +9,6 @@ or Spanish, at any text size, on any device, with no account and no network conn
 
 **Nothing you paste ever leaves your browser.** There is no server, no API key and no analytics.
 The model ships as a static file and runs locally in under a millisecond.
-
-🔗 **Live demo:** https://zzzzzryanzzzzz.github.io/hacksocial/
-
-Every push to `main` builds the site and publishes it to the `gh-pages` branch. If the link 404s,
-Pages has not been switched on yet: **Settings → Pages → Source: "Deploy from a branch" →
-`gh-pages` / `(root)`**. That is a one-time click; the workflow handles every deploy after it.
-
 ---
 
 ## Why this exists
