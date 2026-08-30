@@ -54,6 +54,7 @@ describe('nothing is ever sent anywhere', () => {
       'skeptic.history.v1',
       'skeptic.practice.v1',
       'skeptic.prefs.v1',
+      'skeptic.welcomed.v1',
     ]);
   });
 });

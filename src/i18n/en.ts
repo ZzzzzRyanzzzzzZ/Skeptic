@@ -9,6 +9,14 @@ export interface Locale {
 }
 
 const strings: Record<string, string> = {
+  'welcome.title': 'Welcome to Skeptic',
+  'welcome.sub':
+    'Paste a suspicious message and find out why it is a scam — not just whether it is.',
+  'welcome.p1': 'Works on texts, emails, DMs, or a screenshot of one.',
+  'welcome.p2': 'Explains every point of its reasoning, in plain language.',
+  'welcome.p3': 'Runs entirely on your device. Nothing is ever uploaded.',
+  'welcome.start': 'Get started',
+  'welcome.note': 'No account. No tracking. Works offline.',
   'app.name': 'Skeptic',
   'app.tagline': 'Paste a suspicious message. Find out why it is a scam.',
   'app.offline': 'Runs entirely on your device',

@@ -11,6 +11,11 @@ or Spanish, at any text size, on any device, with no account and no network conn
 The model ships as a static file and runs locally in under a millisecond.
 ---
 
+
+🔗 **Live demo:** https://zzzzzryanzzzzz.github.io/Skeptic/
+
+Every push to `main` rebuilds the site and publishes it to the `gh-pages` branch.
+
 ## Why this exists
 
 Scam messages are the most common form of fraud most people will ever encounter, and the

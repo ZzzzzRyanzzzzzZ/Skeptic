@@ -1,6 +1,14 @@
 import type { Locale } from './en';
 
 const strings: Record<string, string> = {
+  'welcome.title': 'Bienvenido a Skeptic',
+  'welcome.sub':
+    'Pega un mensaje sospechoso y descubre por qué es una estafa, no solo si lo es.',
+  'welcome.p1': 'Funciona con SMS, correos, mensajes directos o una captura de pantalla.',
+  'welcome.p2': 'Explica cada punto de su razonamiento, en lenguaje sencillo.',
+  'welcome.p3': 'Se ejecuta por completo en tu dispositivo. Nunca se sube nada.',
+  'welcome.start': 'Empezar',
+  'welcome.note': 'Sin cuenta. Sin rastreo. Funciona sin conexión.',
   'app.name': 'Skeptic',
   'app.tagline': 'Pega un mensaje sospechoso. Descubre por qué es una estafa.',
   'app.offline': 'Funciona por completo en tu dispositivo',

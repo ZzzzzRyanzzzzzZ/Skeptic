@@ -6,6 +6,7 @@ const Practice = lazy(() => import('./pages/Practice').then((m) => ({ default: m
 const Model = lazy(() => import('./pages/Model').then((m) => ({ default: m.Model })));
 const Learn = lazy(() => import('./pages/Learn').then((m) => ({ default: m.Learn })));
 import { Button } from './components/ui';
+import { Welcome, useWelcome } from './components/Welcome';
 import type { Sensitivity } from './engine';
 
 type Tab = 'analyze' | 'practice' | 'model' | 'learn';
@@ -137,6 +138,9 @@ export function App() {
   const { t } = useI18n();
   const [tab, setTab] = useState<Tab>('analyze');
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const welcome = useWelcome();
+
+  if (welcome.show) return <Welcome onStart={welcome.dismiss} />;
 
   return (
     <div className="min-h-screen">
