@@ -1,0 +1,67 @@
+{
+  "source": "SMS Spam Collection (Almeida, Gómez Hidalgo & Yamakami, 2011)",
+  "generatedAt": "2026-08-26T00:00:00.000Z",
+  "total": 5572,
+  "spam": 747,
+  "ham": 4825,
+  "flagged": {
+    "threshold": 50,
+    "accuracy": 0.8601938262742282,
+    "precision": 0.46774193548387094,
+    "recall": 0.31057563587684067,
+    "f1": 0.37329042638777155,
+    "falseAlarmRate": 0.05471502590673575,
+    "confusion": [
+      [
+        4561,
+        264
+      ],
+      [
+        515,
+        232
+      ]
+    ]
+  },
+  "caution": {
+    "threshold": 25,
+    "accuracy": 0.8379396984924623,
+    "precision": 0.3869565217391304,
+    "recall": 0.357429718875502,
+    "f1": 0.37160751565762,
+    "falseAlarmRate": 0.08766839378238342,
+    "confusion": [
+      [
+        4402,
+        423
+      ],
+      [
+        480,
+        267
+      ]
+    ]
+  },
+  "examples": {
+    "falseAlarms": [
+      {
+        "score": 90,
+        "text": "For me the love should start with attraction.i should feel that I need her every time around me.she should be the first thing which comes in"
+      },
+      {
+        "score": 76,
+        "text": "staff.science.nus.edu.sg/~phyhcmk/teaching/pc1323"
+      },
+      {
+        "score": 72,
+        "text": "Thats cool. i am a gentleman and will treat you with dignity and respect."
+      },
+      {
+        "score": 72,
+        "text": "Nothing. I meant that once the money enters your account here, the bank will remove its flat rate. Someone transfered  &lt;#&gt;  to my acco"
+      },
+      {
+        "score": 72,
+        "text": "Save yourself the stress. If the person has a dorm account, just send your account details and the money will be sent to you."
+      }
+    ]
+  }
+}

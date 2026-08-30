@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Skeptic — check a suspicious message",
+  "version": "1.0.0",
+  "description": "Select a suspicious message anywhere, right-click, and check it for scam and phishing signs.",
+  "permissions": ["contextMenus"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Open Skeptic" },
+  "icons": { "128": "icon.png" }
+}

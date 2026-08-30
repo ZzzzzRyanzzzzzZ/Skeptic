@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Publishing to a gh-pages branch needs only contents: write, which the
+# default token already has. The newer Actions-based Pages flow additionally
+# requires the Pages site to exist, and the default token is not allowed to
+# create one — so this route is the one that works without a manual step.
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          # Sets Vite's base to /hacksocial/ so assets resolve under the
+          # project-pages path rather than the domain root.
+          GITHUB_PAGES: '1'
+
+      - name: Prepare the published tree
+        run: |
+          # Tells Pages to serve the files as-is instead of running Jekyll,
+          # which would otherwise ignore anything starting with an underscore.
+          touch dist/.nojekyll
+          # Project Pages have no server-side rewrites, so a 404 that serves
+          # the app keeps deep links and refreshes working.
+          cp dist/index.html dist/404.html
+
+      - name: Publish to gh-pages
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # A single-commit orphan branch: the published site is a build
+          # artifact, so there is no history worth keeping and the repository
+          # does not grow by ~24 MB on every deploy.
+          git checkout --orphan gh-pages-tmp
+          git --work-tree dist add --all
+          git --work-tree dist commit -m "Deploy ${GITHUB_SHA::7}"
+          git push --force origin HEAD:gh-pages
